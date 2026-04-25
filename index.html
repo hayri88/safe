@@ -1,2 +1,257 @@
-test
-12
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bedankt voor uw vertrouwen en steun. Onze activiteiten zijn stopgezet." />
+  <title>SAFETEX — Bedankt voor uw vertrouwen</title>
+
+  <style>
+    :root {
+      --bg: #f7fbff;
+      --card: #ffffff;
+      --text: #1f2933;
+      --muted: #667085;
+      --accent: #0f4c81;
+      --accent-2: #19a7ce;
+      --accent-3: #f9b233;
+      --border: #d9e6ef;
+      --soft: #eef8fc;
+      --soft-yellow: #fff7df;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(25, 167, 206, 0.25), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(249, 178, 51, 0.22), transparent 30%),
+        linear-gradient(135deg, #ffffff 0%, var(--bg) 100%);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 920px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      box-shadow: 0 24px 80px rgba(15, 76, 129, 0.14);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card::before {
+      content: "";
+      display: block;
+      height: 7px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 26px 32px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.78);
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      color: var(--accent);
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+      border: 1px solid rgba(25, 167, 206, 0.22);
+    }
+
+    .status-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent-3);
+      box-shadow: 0 0 0 4px rgba(249, 178, 51, 0.2);
+    }
+
+    .hero {
+      padding: 74px 56px 66px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 22px;
+      padding: 9px 17px;
+      border-radius: 999px;
+      background: var(--soft-yellow);
+      color: #8a5a00;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      border: 1px solid rgba(249, 178, 51, 0.28);
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0 auto 26px;
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 1.05;
+      letter-spacing: -1.8px;
+      color: var(--accent);
+    }
+
+    .intro {
+      max-width: 690px;
+      margin: 0 auto;
+      font-size: clamp(17px, 2vw, 20px);
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .notice {
+      max-width: 720px;
+      margin: 38px auto 0;
+      padding: 30px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #f2fbff 0%, #ffffff 100%);
+      border: 1px solid rgba(25, 167, 206, 0.24);
+      box-shadow: 0 12px 30px rgba(15, 76, 129, 0.06);
+    }
+
+    .notice p {
+      font-size: 17px;
+      line-height: 1.75;
+      color: #475467;
+    }
+
+    .notice strong {
+      color: var(--accent);
+    }
+
+    .divider {
+      width: 82px;
+      height: 3px;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--accent-2), var(--accent-3));
+      margin: 40px auto;
+    }
+
+    .thanks {
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .footer {
+      padding: 24px 32px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: #6b7c8f;
+      font-size: 14px;
+      background: linear-gradient(90deg, rgba(242, 251, 255, 0.9), rgba(255, 247, 223, 0.72));
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 16px;
+      }
+
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 22px;
+      }
+
+      .hero {
+        padding: 52px 24px 48px;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+
+      .notice {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="card" aria-label="Mededeling">
+      <header class="topbar">
+        <div class="brand">SAFETEX</div>
+        <div class="status">
+          <span class="status-dot"></span>
+          Activiteiten stopgezet
+        </div>
+      </header>
+
+      <div class="hero">
+        <span class="eyebrow">Met dankbaarheid</span>
+
+        <h1>Bedankt voor uw vertrouwen en steun</h1>
+
+        <p class="intro">
+          Wij willen al onze klanten, partners en bezoekers oprecht bedanken
+          voor het vertrouwen, de samenwerking en de steun doorheen de jaren.
+        </p>
+
+        <div class="notice">
+          <p>
+            Na zorgvuldige overweging hebben wij besloten om onze
+            <strong>activiteiten stop te zetten</strong>. Er worden geen nieuwe
+            aanvragen of opdrachten meer aangenomen.
+          </p>
+        </div>
+
+        <div class="divider"></div>
+
+        <p class="thanks">
+          Wij kijken met waardering terug op de contacten, projecten en mooie
+          momenten die wij mochten delen. Bedankt voor uw begrip en voor het
+          vertrouwen dat u ons heeft gegeven.
+        </p>
+      </div>
+
+      <footer class="footer">
+        © 2026 SAFETEX — Bedankt voor uw begrip.
+      </footer>
+    </section>
+  </main>
+</body>
+</html>
